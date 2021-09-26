@@ -5,16 +5,13 @@ inherit cargo
 # If this is git based prefer versioned ones if they exist
 # DEFAULT_PREFERENCE = "-1"
 
-# how to get bluez_player could be as easy as but default to a git checkout:
-# SRC_URI += "crate://crates.io/bluez_player/0.1.0"
-SRC_URI += "git://github.com/AmateurECE/bluez-player.git;protocol=https;nobranch=1"
-SRCREV = "62f00651956e2794fe18d3120ca683c71c13756d"
+# how to get bluez-player could be as easy as but default to a git checkout:
+# SRC_URI += "crate://crates.io/bluez-player/0.1.0"
+SRC_URI += "git://git@github.com/AmateurECE/bluez-player;protocol=ssh;nobranch=1"
+SRCREV = "91365cbc407614c910301f06714c40ef9430a0d1"
 S = "${WORKDIR}/git"
 CARGO_SRC_DIR = ""
-PV_append = ".AUTOINC+62f0065195"
-
-DEPENDS_append = " pkgconfig-native dbus"
-RDEPENDS_${PN}_append = " dbus-lib"
+PV_append = ".AUTOINC+91365cbc40"
 
 # please note if you have entries that do not begin with crate://
 # you must change them to how that package can be fetched
@@ -84,5 +81,5 @@ LICENSE = "MIT"
 # includes this file if it exists but does not fail
 # this is useful for anything you may want to override from
 # what cargo-bitbake generates.
-include bluez_player-${PV}.inc
-include bluez_player.inc
+include bluez-player-${PV}.inc
+include bluez-player.inc
