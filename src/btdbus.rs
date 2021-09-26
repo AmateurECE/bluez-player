@@ -7,11 +7,9 @@
 //
 // CREATED:         09/05/2021
 //
-// LAST EDITED:     09/05/2021
+// LAST EDITED:     09/26/2021
 ////
 
-use tokio::time::sleep;
-use std::time::Duration;
 use dbus_crossroads::IfaceBuilder;
 
 use crate::hello;
@@ -27,7 +25,6 @@ pub fn interface<T: Send + 'static>(builder: &mut IfaceBuilder<T>) {
             let s = format!("Hello {}! This API has been used {} times.",
                             name, hello.get());
             async move {
-                sleep(Duration::from_millis(500)).await;
                 let signal_msg = ctx.make_signal("HelloHappened", (name,));
                 ctx.push_msg(signal_msg);
                 ctx.reply(Ok((s,)))

@@ -3,7 +3,7 @@
 //
 // AUTHOR:          Ethan D. Twardy <ethan.twardy@gmail.com>
 //
-// DESCRIPTION:     bluez_player provides a BlueZ agent for accepting incoming
+// DESCRIPTION:     bluez-player provides a BlueZ agent for accepting incoming
 //                  Bluetooth connections and routing media from the BlueZ
 //                  stack to the system PCM device.
 //
